@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+docgen/__init__.py
+docgen/docgen.py
+py_code_docgen.egg-info/PKG-INFO
+py_code_docgen.egg-info/SOURCES.txt
+py_code_docgen.egg-info/dependency_links.txt
+py_code_docgen.egg-info/entry_points.txt
+py_code_docgen.egg-info/requires.txt
+py_code_docgen.egg-info/top_level.txt
