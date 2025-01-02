@@ -2,7 +2,7 @@
 
 A powerful documentation generator that creates beautiful Markdown documentation from source code.
 
-[![PyPI version](https://badge.fury.io/py/py-code-docgen.svg)](https://badge.fury.io/py/py-code-docgen)
+[![PyPI version](https://badge.fury.io/py/py-code-docgen.svg?cache=bust)](https://badge.fury.io/py/py-code-docgen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Table of Contents
