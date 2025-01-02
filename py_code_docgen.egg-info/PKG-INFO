@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: py-code-docgen
-Version: 0.1.7
+Version: 0.1.8
 Summary: A powerful documentation generator that creates beautiful markdown documentation from source code
 Home-page: https://github.com/ci-psy/DocGen
 Author: Cosmo Inclan

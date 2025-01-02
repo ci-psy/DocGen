@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="py-code-docgen",
-    version="0.1.7",
+    version="0.1.8",
     author="Cosmo Inclan",
     author_email="icosmo2@gmail.com", 
     description="A powerful documentation generator that creates beautiful markdown documentation from source code",
@@ -35,7 +35,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'py-code-docgen=docgen:main',
+            'py-code-docgen=py_code_docgen:main',
         ],
     },
 ) 
