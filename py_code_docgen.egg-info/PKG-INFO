@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: py-code-docgen
-Version: 0.1.6
+Version: 0.1.7
 Summary: A powerful documentation generator that creates beautiful markdown documentation from source code
 Home-page: https://github.com/ci-psy/DocGen
 Author: Cosmo Inclan
@@ -22,67 +22,146 @@ Requires-Dist: typing>=3.7.4.3
 Requires-Dist: dataclasses>=0.6; python_version < "3.7"
 Requires-Dist: pathlib>=1.0.1; python_version < "3.4"
 Requires-Dist: argparse>=1.4.0
+Requires-Dist: tqdm>=4.65.0
 
 # DocGen - Beautiful Documentation Generator
 
-A powerful documentation generator that creates beautiful markdown documentation from source code.
+A powerful documentation generator that creates beautiful Markdown documentation from source code.
 
-## Features 🌟
+[![PyPI version](https://badge.fury.io/py/py-code-docgen.svg)](https://badge.fury.io/py/py-code-docgen)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-- 📝 Interactive wizard mode for easy configuration
-- 🌳 Project tree visualization
-- 📚 Table of contents with customizable formats
-- 🔍 Collapsible sections for better organization
-- 📊 File statistics and line counts
-- ⚡ Fast project reports
-- 🎨 Syntax highlighting for multiple languages
-- 📋 Line numbers in code blocks
-- 🔗 Clickable navigation links
-- 🎯 Customizable output formats
-- 🔄 CLI command generation for repeatable documentation
-- 🎯 Fast project reports for quick insights
+## Table of Contents
+1. [Features](#features)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Quick Start](#quick-start)
+5. [Command Line Options](#command-line-options)
+6. [Interactive Wizard Features](#interactive-wizard-features)
+7. [Examples](#examples)
+8. [Output Customization](#output-customization)
+9. [Supported Languages](#supported-languages)
+10. [Configuration](#configuration)
+11. [Troubleshooting](#troubleshooting)
+12. [Contributing](#contributing)
+13. [License](#license)
 
-## Requirements 🛠️
+---
 
-- Python 3.7 or higher
-- Works on Windows, macOS, and Linux
+## Features ✨
 
-## Installation 📦
+- 🧙‍♂️ Interactive wizard mode for easy configuration
+- 🌳 Project tree visualization with customizable filters
+- 📚 Table of contents with multiple format options
+- 🔍 Smart file filtering by extension
+- 📊 Detailed file statistics and analytics
+- ⚡ Fast project reports for quick insights
+- 🎨 Language-aware code blocks for:
+  - Python, JavaScript, TypeScript
+  - Swift, Metal
+  - C, C++
+  - HTML, CSS
+  - JSON, YAML, Markdown
+- 📋 Optional line numbers in code blocks
+- 🔗 Clickable navigation with customizable anchors
+- 📦 Large file chunking for better performance
+- 🎯 Minimal and full formatting options
+- 🔄 CLI command generation for automation
 
-You can install DocGen directly from PyPI:
+---
 
+## Requirements
+
+- Python 3.7 or higher  
+- Works on Windows, macOS, and Linux  
+
+### Dependencies
+- `tqdm`: Progress bar visualization for documentation generation
+- Core Python libraries: `pathlib`, `typing`, `dataclasses` (for Python < 3.7)
+
+> **Note**  
+> All dependencies will be automatically installed when using pip installation methods.
+
+---
+
+## Installation
+
+### Option 1: Simple Installation (Global)
+Install directly from PyPI:
 ```bash
 pip install py-code-docgen
 ```
 
-For development installation:
+### Option 2: Development Installation (Recommended)
+For development or when using a virtual environment:
 
-```bash
-git clone https://github.com/ci-psy/DocGen.git
-cd docgen
-pip install -r requirements.txt
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ci-psy/DocGen.git
+   cd docgen
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   # Create virtual environment
+   python3 -m venv venv
+
+   # Activate on macOS/Linux
+   source venv/bin/activate
+
+   # Activate on Windows (cmd.exe)
+   venv\Scripts\activate.bat
+
+   # Activate on Windows (PowerShell)
+   venv\Scripts\Activate.ps1
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+> **Note**  
+> Remember to activate the virtual environment each time you work on the project. Your terminal prompt should change to `(venv) $` when it's active.
+
+---
 
 ## Quick Start 🚀
 
-1. Interactive Mode (Recommended):
+### 1. Interactive Wizard (Recommended)
+Start the interactive configuration wizard:
 ```bash
 py-code-docgen -i
 ```
 
-2. Command Line Usage:
+The wizard will:
+- Offer to show a quick project overview
+- Guide you through all configuration options
+- Generate a CLI command for future use
+- Preview settings before generating documentation
+
+### 2. Fast Project Report
+Get a quick overview of your project:
+```bash
+py-code-docgen --fast-report
+```
+
+### 3. Direct Command Line Usage
+Generate documentation with specific options:
 ```bash
 py-code-docgen [project_dir] -o output.md --include "py,js,cpp"
 ```
 
-3. View Help and Options:
+### 4. View All Options
 ```bash
 py-code-docgen --help
 ```
 
-## Command Line Options 🎮
+---
 
-```
+## Command Line Options
+
+```text
 usage: py-code-docgen [-h] [-i] [--fast-report] [-o OUTPUT] [--include INCLUDE]
                       [--show SHOW] [--show-all] [--no-collapsible]
                       [--collapsible-level {all,main,subsections,none}]
@@ -95,69 +174,220 @@ usage: py-code-docgen [-h] [-i] [--fast-report] [-o OUTPUT] [--include INCLUDE]
                       [project_dir]
 ```
 
-## Interactive Wizard Features 🧙‍♂️
+### Key Options Explained
+- `--include "ext1,ext2"`: Specify which file types to document
+- `--show "ext1,ext2"`: Control which files appear in the tree view
+- `--chunk-size N`: Split large files into N-line chunks for better readability
+- `--toc-format`: Choose how files are displayed in the table of contents
+- `--collapsible-level`: Control which sections can be collapsed
 
-The interactive wizard (`-i` flag) provides a user-friendly way to configure your documentation:
+---
 
-1. **Optional Fast Report**: Get a quick overview of your project before proceeding
-2. **Step-by-Step Configuration**: Guided setup for all documentation options
-3. **CLI Command Generation**: After configuration, you can view the equivalent CLI command to:
-   - Save it for future use
-   - Automate documentation generation
-   - Share your exact configuration with others
+## Interactive Wizard Features
 
-Example of generated CLI command:
+The `-i` flag launches an interactive wizard that helps you:
+
+1. **Project Overview** 
+   - Optional fast report before configuration
+   - File type detection and statistics
+   - Quick project insights
+
+2. **Smart Configuration**
+   - Step-by-step guided setup
+   - File type filtering with auto-detection
+   - Tree view customization
+   - TOC format selection
+   - Collapsible section control
+
+3. **Output Customization**
+   - Multiple documentation styles
+   - Line number options
+   - File information detail levels
+   - Large file handling settings
+
+4. **CLI Command Generation**
+   - Generates equivalent command line
+   - Perfect for automation or scripting
+   - Easy to save and reuse settings
+
+Example generated command:
 ```bash
 py-code-docgen "my_project" -o "docs.md" --include "py,js" --toc-format full --collapsible-level main --line-numbers
 ```
 
-## Examples 📋
+---
 
-Generate documentation with default settings:
+## Examples
+
+### Basic Documentation
 ```bash
 py-code-docgen .
 ```
 
-Generate minimal documentation for Python files:
+### Python-Only Documentation
 ```bash
 py-code-docgen --include py --no-toc --minimal
 ```
 
-Generate documentation with full paths and main section collapsing:
+### Detailed C++ Documentation
 ```bash
-py-code-docgen --include cpp --toc-format full --collapsible-level main
+py-code-docgen --include cpp --toc-format full --collapsible-level main --line-numbers
 ```
 
-Generate a quick project report:
+### Quick Project Analysis
 ```bash
 py-code-docgen --fast-report
 ```
 
-## Output Customization 🎨
+### Large Project with Chunking
+```bash
+py-code-docgen . --chunk-size 100 --collapsible-level all
+```
 
-### TOC Formats
-- Full paths: `dir/subdir/file.ext`
-- Name with extension: `file.ext`
-- Just name: `file`
+---
+
+## Output Customization
+
+### Table of Contents Formats
+- **Full paths**: `dir/subdir/file.ext`  
+- **Name with extension**: `file.ext`  
+- **Just name**: `file`
 
 ### Collapsible Sections
-- All sections
-- Main sections only
-- Subsections only
-- None (disabled)
+- **All sections**: Everything collapsible
+- **Main sections**: Only file sections collapsible
+- **Subsections**: Only details collapsible
+- **None**: Everything expanded
 
-## Contributing 🤝
+### File Information
+- File sizes and line counts
+- Last modified timestamps
+- File type statistics
+- Custom path information
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Code Display
+- Syntax highlighting
+- Optional line numbers
+- Customizable chunk sizes
+- Multiple formatting styles
 
-## License 📄
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Supported Languages
 
-## Author ✨
+DocGen automatically detects and applies language-specific formatting for:
 
-Created by Cosmo Inclan
+| Language/Format | Extensions |
+|----------------|------------|
+| Python | `.py` |
+| JavaScript | `.js` |
+| TypeScript | `.ts` |
+| Swift | `.swift` |
+| Metal | `.metal` |
+| C++ | `.cpp`, `.h` |
+| C | `.c` |
+| HTML | `.html` |
+| CSS | `.css` |
+| JSON | `.json` |
+| YAML | `.yml`, `.yaml` |
+| Markdown | `.md` |
 
-## Acknowledgments 🙏
+The actual syntax highlighting in the generated documentation depends on your Markdown viewer's capabilities.
 
-Special thanks to all contributors and users of DocGen!
+## Configuration
+
+### File Filtering
+
+- Use `.gitignore`-style patterns to exclude files/directories:
+  ```bash
+  py-code-docgen --exclude "node_modules/,*.test.js"
+  ```
+
+### Large Files
+
+- Control chunk size for better performance:
+  ```bash
+  py-code-docgen --chunk-size 100  # Split files into 100-line chunks
+  ```
+
+### Output Format
+
+- **Minimal Mode**: Clean, compact output
+  ```bash
+  py-code-docgen --minimal
+  ```
+
+- **Full Mode**: Detailed documentation with all features
+  ```bash
+  py-code-docgen --show-all --line-numbers --path-info
+  ```
+
+### Progress Indicators
+
+- Show progress during generation:
+  ```bash
+  py-code-docgen --show-progress
+  ```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Virtual Environment Activation**
+   - Issue: `command not found: py-code-docgen`
+   - Solution: Ensure virtual environment is activated:
+     ```bash
+     source venv/bin/activate  # macOS/Linux
+     venv\Scripts\activate.bat  # Windows
+     ```
+
+2. **Large Files**
+   - Issue: Documentation generation is slow or memory-intensive
+   - Solution: Adjust chunk size:
+     ```bash
+     py-code-docgen --chunk-size 50  # Smaller chunks
+     ```
+
+3. **Unicode/Encoding**
+   - Issue: Special characters appear garbled
+   - Solution: Ensure files are UTF-8 encoded
+
+4. **Permission Issues**
+   - Issue: Cannot read certain files
+   - Solution: Check file permissions or run with appropriate privileges
+
+### Version Information
+
+Check your installed version:
+```bash
+py-code-docgen --version
+```
+
+### Getting Help
+
+1. Run the interactive wizard:
+   ```bash
+   py-code-docgen -i
+   ```
+
+2. View all options:
+   ```bash
+   py-code-docgen --help
+   ```
+
+3. Generate a fast report:
+   ```bash
+   py-code-docgen --fast-report
+   ```
+
+---
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License.

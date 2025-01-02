@@ -14,8 +14,11 @@ A powerful documentation generator that creates beautiful Markdown documentation
 6. [Interactive Wizard Features](#interactive-wizard-features)
 7. [Examples](#examples)
 8. [Output Customization](#output-customization)
-9. [Contributing](#contributing)
-10. [License](#license)
+9. [Supported Languages](#supported-languages)
+10. [Configuration](#configuration)
+11. [Troubleshooting](#troubleshooting)
+12. [Contributing](#contributing)
+13. [License](#license)
 
 ---
 
@@ -27,7 +30,12 @@ A powerful documentation generator that creates beautiful Markdown documentation
 - 🔍 Smart file filtering by extension
 - 📊 Detailed file statistics and analytics
 - ⚡ Fast project reports for quick insights
-- 🎨 Syntax highlighting for multiple languages
+- 🎨 Language-aware code blocks for:
+  - Python, JavaScript, TypeScript
+  - Swift, Metal
+  - C, C++
+  - HTML, CSS
+  - JSON, YAML, Markdown
 - 📋 Optional line numbers in code blocks
 - 🔗 Clickable navigation with customizable anchors
 - 📦 Large file chunking for better performance
@@ -40,6 +48,13 @@ A powerful documentation generator that creates beautiful Markdown documentation
 
 - Python 3.7 or higher  
 - Works on Windows, macOS, and Linux  
+
+### Dependencies
+- `tqdm`: Progress bar visualization for documentation generation
+- Core Python libraries: `pathlib`, `typing`, `dataclasses` (for Python < 3.7)
+
+> **Note**  
+> All dependencies will be automatically installed when using pip installation methods.
 
 ---
 
@@ -229,6 +244,115 @@ py-code-docgen . --chunk-size 100 --collapsible-level all
 - Optional line numbers
 - Customizable chunk sizes
 - Multiple formatting styles
+
+---
+
+## Supported Languages
+
+DocGen automatically detects and applies language-specific formatting for:
+
+| Language/Format | Extensions |
+|----------------|------------|
+| Python | `.py` |
+| JavaScript | `.js` |
+| TypeScript | `.ts` |
+| Swift | `.swift` |
+| Metal | `.metal` |
+| C++ | `.cpp`, `.h` |
+| C | `.c` |
+| HTML | `.html` |
+| CSS | `.css` |
+| JSON | `.json` |
+| YAML | `.yml`, `.yaml` |
+| Markdown | `.md` |
+
+The actual syntax highlighting in the generated documentation depends on your Markdown viewer's capabilities.
+
+## Configuration
+
+### File Filtering
+
+- Use `.gitignore`-style patterns to exclude files/directories:
+  ```bash
+  py-code-docgen --exclude "node_modules/,*.test.js"
+  ```
+
+### Large Files
+
+- Control chunk size for better performance:
+  ```bash
+  py-code-docgen --chunk-size 100  # Split files into 100-line chunks
+  ```
+
+### Output Format
+
+- **Minimal Mode**: Clean, compact output
+  ```bash
+  py-code-docgen --minimal
+  ```
+
+- **Full Mode**: Detailed documentation with all features
+  ```bash
+  py-code-docgen --show-all --line-numbers --path-info
+  ```
+
+### Progress Indicators
+
+- Show progress during generation:
+  ```bash
+  py-code-docgen --show-progress
+  ```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Virtual Environment Activation**
+   - Issue: `command not found: py-code-docgen`
+   - Solution: Ensure virtual environment is activated:
+     ```bash
+     source venv/bin/activate  # macOS/Linux
+     venv\Scripts\activate.bat  # Windows
+     ```
+
+2. **Large Files**
+   - Issue: Documentation generation is slow or memory-intensive
+   - Solution: Adjust chunk size:
+     ```bash
+     py-code-docgen --chunk-size 50  # Smaller chunks
+     ```
+
+3. **Unicode/Encoding**
+   - Issue: Special characters appear garbled
+   - Solution: Ensure files are UTF-8 encoded
+
+4. **Permission Issues**
+   - Issue: Cannot read certain files
+   - Solution: Check file permissions or run with appropriate privileges
+
+### Version Information
+
+Check your installed version:
+```bash
+py-code-docgen --version
+```
+
+### Getting Help
+
+1. Run the interactive wizard:
+   ```bash
+   py-code-docgen -i
+   ```
+
+2. View all options:
+   ```bash
+   py-code-docgen --help
+   ```
+
+3. Generate a fast report:
+   ```bash
+   py-code-docgen --fast-report
+   ```
 
 ---
 
