@@ -22,7 +22,7 @@ A powerful documentation generator that creates beautiful Markdown documentation
 
 ---
 
-## Features ✨
+## Features
 
 - 🧙‍♂️ Interactive wizard mode for easy configuration
 - 🌳 Project tree visualization with customizable filters
@@ -100,7 +100,7 @@ For development or when using a virtual environment:
 
 ---
 
-## Quick Start 🚀
+## Quick Start
 
 ### 1. Interactive Wizard (Recommended)
 Start the interactive configuration wizard:
