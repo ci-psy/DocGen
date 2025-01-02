@@ -1,7 +1,6 @@
 .pypirc
-.pypirc
-.pypirc
-.pypirc
-.pypirc
-.pypirc
-.pypirc
+*.pyc
+__pycache__/
+dist/
+build/
+*.egg-info/
