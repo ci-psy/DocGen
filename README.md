@@ -21,17 +21,18 @@ A powerful documentation generator that creates beautiful Markdown documentation
 
 ## Features ✨
 
-- Interactive wizard mode for easy configuration  
-- Project tree visualization  
-- Table of contents with customizable formats  
-- Collapsible sections for better organization  
-- File statistics and line counts  
-- Fast project reports  
-- Syntax highlighting for multiple languages  
-- Line numbers in code blocks  
-- Clickable navigation links  
-- Customizable output formats  
-- CLI command generation for repeatable documentation
+- 🧙‍♂️ Interactive wizard mode for easy configuration
+- 🌳 Project tree visualization with customizable filters
+- 📚 Table of contents with multiple format options
+- 🔍 Smart file filtering by extension
+- 📊 Detailed file statistics and analytics
+- ⚡ Fast project reports for quick insights
+- 🎨 Syntax highlighting for multiple languages
+- 📋 Optional line numbers in code blocks
+- 🔗 Clickable navigation with customizable anchors
+- 📦 Large file chunking for better performance
+- 🎯 Minimal and full formatting options
+- 🔄 CLI command generation for automation
 
 ---
 
@@ -80,26 +81,40 @@ For development or when using a virtual environment:
    ```
 
 > **Note**  
-> Remember to activate the virtual environment each time you work on the project. Your terminal prompt should change to `(venv) $` when it’s active.
+> Remember to activate the virtual environment each time you work on the project. Your terminal prompt should change to `(venv) $` when it's active.
 
 ---
 
 ## Quick Start 🚀
 
-1. **Interactive Wizard Mode (Recommended)**:
-   ```bash
-   py-code-docgen -i
-   ```
+### 1. Interactive Wizard (Recommended)
+Start the interactive configuration wizard:
+```bash
+py-code-docgen -i
+```
 
-2. **Command Line Usage**:
-   ```bash
-   py-code-docgen [project_dir] -o output.md --include "py,js,cpp"
-   ```
+The wizard will:
+- Offer to show a quick project overview
+- Guide you through all configuration options
+- Generate a CLI command for future use
+- Preview settings before generating documentation
 
-3. **View Help and Options**:
-   ```bash
-   py-code-docgen --help
-   ```
+### 2. Fast Project Report
+Get a quick overview of your project:
+```bash
+py-code-docgen --fast-report
+```
+
+### 3. Direct Command Line Usage
+Generate documentation with specific options:
+```bash
+py-code-docgen [project_dir] -o output.md --include "py,js,cpp"
+```
+
+### 4. View All Options
+```bash
+py-code-docgen --help
+```
 
 ---
 
@@ -118,17 +133,43 @@ usage: py-code-docgen [-h] [-i] [--fast-report] [-o OUTPUT] [--include INCLUDE]
                       [project_dir]
 ```
 
+### Key Options Explained
+- `--include "ext1,ext2"`: Specify which file types to document
+- `--show "ext1,ext2"`: Control which files appear in the tree view
+- `--chunk-size N`: Split large files into N-line chunks for better readability
+- `--toc-format`: Choose how files are displayed in the table of contents
+- `--collapsible-level`: Control which sections can be collapsed
+
 ---
 
 ## Interactive Wizard Features
 
-Using the `-i` flag guides you through setup:
+The `-i` flag launches an interactive wizard that helps you:
 
-1. **Optional Fast Report**: Get a quick project overview.  
-2. **Step-by-Step Configuration**: Choose your documentation options interactively.  
-3. **CLI Command Generation**: Save or share the automatically generated command.
+1. **Project Overview** 
+   - Optional fast report before configuration
+   - File type detection and statistics
+   - Quick project insights
 
-Example:
+2. **Smart Configuration**
+   - Step-by-step guided setup
+   - File type filtering with auto-detection
+   - Tree view customization
+   - TOC format selection
+   - Collapsible section control
+
+3. **Output Customization**
+   - Multiple documentation styles
+   - Line number options
+   - File information detail levels
+   - Large file handling settings
+
+4. **CLI Command Generation**
+   - Generates equivalent command line
+   - Perfect for automation or scripting
+   - Easy to save and reuse settings
+
+Example generated command:
 ```bash
 py-code-docgen "my_project" -o "docs.md" --include "py,js" --toc-format full --collapsible-level main --line-numbers
 ```
@@ -137,40 +178,57 @@ py-code-docgen "my_project" -o "docs.md" --include "py,js" --toc-format full --c
 
 ## Examples
 
-- **Generate documentation with default settings**:
-  ```bash
-  py-code-docgen .
-  ```
+### Basic Documentation
+```bash
+py-code-docgen .
+```
 
-- **Generate minimal documentation for Python files**:
-  ```bash
-  py-code-docgen --include py --no-toc --minimal
-  ```
+### Python-Only Documentation
+```bash
+py-code-docgen --include py --no-toc --minimal
+```
 
-- **Generate documentation with full paths and main section collapsing**:
-  ```bash
-  py-code-docgen --include cpp --toc-format full --collapsible-level main
-  ```
+### Detailed C++ Documentation
+```bash
+py-code-docgen --include cpp --toc-format full --collapsible-level main --line-numbers
+```
 
-- **Generate a quick project report**:
-  ```bash
-  py-code-docgen --fast-report
-  ```
+### Quick Project Analysis
+```bash
+py-code-docgen --fast-report
+```
+
+### Large Project with Chunking
+```bash
+py-code-docgen . --chunk-size 100 --collapsible-level all
+```
 
 ---
 
 ## Output Customization
 
-### TOC Formats
+### Table of Contents Formats
 - **Full paths**: `dir/subdir/file.ext`  
 - **Name with extension**: `file.ext`  
 - **Just name**: `file`
 
 ### Collapsible Sections
-- **All sections**  
-- **Main sections only**  
-- **Subsections only**  
-- **None** (disabled)
+- **All sections**: Everything collapsible
+- **Main sections**: Only file sections collapsible
+- **Subsections**: Only details collapsible
+- **None**: Everything expanded
+
+### File Information
+- File sizes and line counts
+- Last modified timestamps
+- File type statistics
+- Custom path information
+
+### Code Display
+- Syntax highlighting
+- Optional line numbers
+- Customizable chunk sizes
+- Multiple formatting styles
 
 ---
 
