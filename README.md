@@ -7,20 +7,20 @@ It’s quick to set up, highly configurable, and supports multiple languages.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Table of Contents
-1. [📋 Overview](#1-overview)
-2. [✨ Features](#2-features)
-3. [📦 Requirements](#3-requirements)
-4. [⚡ Installation](#4-installation)
-5. [🚀 Quick Start](#5-quick-start)
-6. [💻 Command Line Options](#6-command-line-options)
-7. [🧙‍♂️ Interactive Wizard](#7-interactive-wizard)
-8. [📝 Examples](#8-examples)
-9. [🎨 Output Customization](#9-output-customization)
-10. [🔤 Supported Languages](#10-supported-languages)
-11. [⚙️ Configuration](#11-configuration)
-12. [🔧 Troubleshooting](#12-troubleshooting)
-13. [👥 Contributing](#13-contributing)
-14. [📄 License](#14-license)
+1. 📋 [Overview](#1-overview)
+2. ✨ [Features](#2-features)
+3. 📦 [Requirements](#3-requirements)
+4. ⚡ [Installation](#4-installation)
+5. 🚀 [Quick Start](#5-quick-start)
+6. 💻 [Command Line Options](#6-command-line-options)
+7. 🧙‍♂️ [Interactive Wizard](#7-interactive-wizard)
+8. 📝 [Examples](#8-examples)
+9. 🎨 [Output Customization](#9-output-customization)
+10. 🔤 [Supported Languages](#10-supported-languages)
+11. ⚙️ [Configuration](#11-configuration)
+12. 🔧 [Troubleshooting](#12-troubleshooting)
+13. 👥 [Contributing](#13-contributing)
+14. 📄 [License](#14-license)
 
 ---
 
@@ -189,7 +189,7 @@ DocGen supports a wide range of languages, including but not limited to:
 - **C/C++**: `.c`, `.cpp`, `.cc`, `.cxx`, `.hpp`, etc.  
 - **Java/JVM**: `.java`, `.kt`, `.kts`, `.groovy`, `.scala`  
 - **Shell**: `.sh`, `.bash`, `.zsh`, `.fish`, `.ps1`  
-- **Other**: Swift, Rust, Go, PHP, Ruby, Lua, Dart, etc.
+- **Other**: `.swift`, `.rust`, `.go`, `.php`, `.ruby`, `.lua`, `.dart`, etc.
 
 **Note**: Syntax highlighting depends on your Markdown viewer.
 
