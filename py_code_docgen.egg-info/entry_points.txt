@@ -1,2 +1,2 @@
 [console_scripts]
-py-code-docgen = py_code_docgen:main
+py-code-docgen = py_code_docgen.docgen:main

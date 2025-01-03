@@ -1,11 +1,2 @@
 # Core dependencies
-pathlib>=1.0.1
-typing>=3.7.4.3
-dataclasses>=0.6; python_version < '3.7'
-
-# Development dependencies
-pytest>=7.0.0
-black>=22.0.0
-flake8>=4.0.0
-mypy>=0.950
-tqdm>=4.65.0 
+dataclasses>=0.6; python_version < '3.7' 

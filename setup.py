@@ -5,37 +5,37 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="py-code-docgen",
-    version="0.1.8",
-    author="Cosmo Inclan",
-    author_email="icosmo2@gmail.com", 
-    description="A powerful documentation generator that creates beautiful markdown documentation from source code",
+    version="0.2.0",
+    author="ci-psy",
+    author_email="icosmo2@gmail.com",
+    description="Generate structured Markdown documentation from project directories",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ci-psy/DocGen",
     packages=find_packages(),
+    package_data={
+        "py_code_docgen": ["*.py"],
+    },
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
+        "Topic :: Documentation",
         "Topic :: Software Development :: Documentation",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.6",
     install_requires=[
-        "typing>=3.7.4.3",
-        "dataclasses>=0.6; python_version < '3.7'",
-        "pathlib>=1.0.1; python_version < '3.4'",
-        "argparse>=1.4.0",
-        "tqdm>=4.65.0"
+        "dataclasses>=0.6; python_version < '3.7'"
     ],
     entry_points={
         'console_scripts': [
-            'py-code-docgen=py_code_docgen:main',
+            'py-code-docgen=py_code_docgen.docgen:main',
         ],
     },
 ) 

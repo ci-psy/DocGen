@@ -4,6 +4,7 @@ README.md
 requirements.txt
 setup.py
 py_code_docgen/__init__.py
+py_code_docgen/docgen.py
 py_code_docgen.egg-info/PKG-INFO
 py_code_docgen.egg-info/SOURCES.txt
 py_code_docgen.egg-info/dependency_links.txt
