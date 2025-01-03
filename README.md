@@ -1,9 +1,9 @@
-# DocGen — Beautiful Documentation Generator 📚
+# DocGen — Codebase Documentation Generator
 
 Effortlessly generate Markdown documentation from your source code with DocGen.  
 It’s quick to set up, highly configurable, and supports multiple languages.
 
-[![PyPI version](https://badge.fury.io/py/py-code-docgen.svg?cache=bust)](https://badge.fury.io/py/py-code-docgen)
+[![PyPI version](https://img.shields.io/pypi/v/py-code-docgen.svg)](https://pypi.org/project/py-code-docgen/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Table of Contents
